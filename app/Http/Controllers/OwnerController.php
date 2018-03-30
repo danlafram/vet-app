@@ -23,4 +23,24 @@ class OwnerController extends Controller
 		$name = $request->input('name');
     	// TBC
     }
+
+    public function request3(Request $request)
+    {
+    	//
+    }
+
+    public function request10(Request $request)
+    {
+    	//
+    }
+
+    public function request12(Request $request)
+    {
+    	//
+    }
+
+    public function request13(Request $request)
+    {
+    	//
+    }
 }

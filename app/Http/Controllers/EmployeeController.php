@@ -23,4 +23,19 @@ class EmployeeController extends Controller
 		$name = $request->input('name');
     	// TBC
     }
+
+    public function request6(Request $request)
+    {
+    	//
+    }
+
+    public function request9(Request $request)
+    {
+    	//
+    }
+
+    public function request11(Request $request)
+    {
+    	//
+    }
 }

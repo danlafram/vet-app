@@ -23,4 +23,24 @@ class AnimalController extends Controller
 		$name = $request->input('name');
     	// TBC
     }
+
+    public function request2(Request $request)
+    {
+    	//
+    }
+
+    public function request4(Request $request)
+    {
+    	//
+    }
+
+    public function request7(Request $request)
+    {
+    	//
+    }
+
+    public function request15(Request $request)
+    {
+    	//
+    }
 }
