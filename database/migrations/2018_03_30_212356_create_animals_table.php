@@ -15,6 +15,12 @@ class CreateAnimalsTable extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('type');
+            $table->longText('description');
+            $table->timestamp('dob');
+            $table->timestamp('date_inscription');
+            $table->string('animal_state');
             $table->timestamps();
         });
     }
