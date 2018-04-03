@@ -18,8 +18,8 @@ class CreateAnimalsTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->longText('description');
-            $table->timestamp('dob');
-            $table->timestamp('date_inscription');
+            $table->date('dob');
+            $table->date('dateInscription');
             $table->string('animal_state');
             $table->timestamps();
         });

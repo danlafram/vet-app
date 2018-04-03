@@ -19,7 +19,7 @@ class CreateEmployeesTable extends Migration
             $table->string('lname');
             $table->string('address');
             $table->smallInteger('telephone');
-            $table->timestamp('dob');
+            $table->date('dob');
             $table->char('sexe', 1);
             $table->string('nas');
             $table->string('fonction');
