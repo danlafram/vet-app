@@ -14,10 +14,40 @@ class AnimalController extends Controller
 
     public function store(Request $request)
     {
-         $animal = new Animal;
-         if($request->session()->get('id')){
-            $animal->ownerId = $request->session()->get('id');
+        if($request->input('animalId') != null)
+        {
+            //$animal_to_update = new Animal();
+            //$animal_to_update = $request->input('animal');
+            $id = $request->input('animalId');
+            $animal_to_update = Animal::where('id', $id)->first();
+            return view('register-animal', ['animal_to_update' => $animal_to_update]);
         }
+        else if($request->session()->get('id'))
+        {
+            $animal = new Animal;
+            if($request->session()->get('id'))
+            {
+                $animal->ownerId = $request->session()->get('id');
+            }
+            $animal->name = $request->input('name');
+            $animal->type = $request->input('type');
+            $animal->description = $request->input('description');
+            $animal->dob = $request->input('dob');
+            $animal->dateInscription = $request->input('date_inscription');
+            $animal->animal_state = $request->input('animal_state');
+            $animal->save();
+            $request->session()->flush();
+        }
+        else
+        {
+            return view('register-animal');
+        }
+    }
+
+    public function update(Request $request)
+    {
+        $id = $request->input('animalId');
+		$animal = Animal::Where('id', $id)->first();
         $animal->name = $request->input('name');
         $animal->type = $request->input('type');
         $animal->description = $request->input('description');
@@ -25,12 +55,8 @@ class AnimalController extends Controller
         $animal->dateInscription = $request->input('date_inscription');
         $animal->animal_state = $request->input('animal_state');
         $animal->save();
-        return 'Successfully saved';
-    }
-
-    public function update(Request $request)
-    {
-		$name = $request->input('name');
+        $request->session()->flush();
+        return 'Successfully updated';
     }
 
     public function delete(Request $request)

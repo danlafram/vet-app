@@ -102,8 +102,9 @@
                     <td>{{ $animal->animal_state }}</td>
                     <td> <a href="#"> {{ $animal->ownerId }} </a></td>
                     <td>
-                        <form method="PUT" action={{ url('/animals') }}>
+                        <form method="POST" action={{ url('/update-animal') }}>
                             {!! csrf_field() !!}
+                            <input type="hidden" name="animalId" value="{{ $animal->id }}">
                             <button type="submit">
                                 <i class="fas fa-edit"></i>
                             </button>

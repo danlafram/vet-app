@@ -48,7 +48,7 @@ Route::get('/register-animal', 'AnimalController@store');
 Route::post('/animals', 'AnimalController@store');
 Route::delete('/animals', 'AnimalController@delete');
 Route::post('/delete-animal', 'AnimalController@delete');
-Route::post('/animals{id}', 'AnimalController@update');
+Route::post('/update-animal', 'AnimalController@store');
 Route::get('/request2', 'AnimalController@request2');
 Route::get('/request4', 'AnimalController@request4');
 Route::get('/request7', 'AnimalController@request7');

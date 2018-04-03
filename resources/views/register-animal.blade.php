@@ -77,37 +77,75 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <form action="{{ url('/animals') }}" method="POST">
-                    {{ csrf_field() }}
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Type</label>
-                    <input type="text" class="form-control" id="type" name="type" placeholder="Enter Type">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Description</label>
-                    <textarea type="text" class="form-control" id="description" name="description">Enter Description</textarea> 
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Date of Birth</label>
-                    <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter Date of Birth">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Date of Inscription</label>
-                    <input type="date" class="form-control" id="date_inscription" name="date_inscription" placeholder="Enter Date of inscription">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Animal State</label>
-                    <select class="form-control" name="animal_state">
-                          <option value="living">Living</option>
-                          <option value="deceased">Deceased</option>
-                        </select>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                @isset($animal_to_update)
+                    <form action="{{ url('/update-animal') }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="animalId" value=" {{ $animal_to_update->id }} ">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value=" {{ $animal_to_update->name }} ">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Type</label>
+                        <input type="text" class="form-control" id="type" name="type" value={{ $animal_to_update->type }}>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Description</label>
+                        <textarea type="text" class="form-control" id="description" name="description">{{ $animal_to_update->description }}</textarea> 
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob" value={{ $animal_to_update->dob }}>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Date of Inscription</label>
+                        <input type="date" class="form-control" id="date_inscription" name="date_inscription" value={{ $animal_to_update->dateInscription }}>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Animal State</label>
+                        <select class="form-control" name="animal_state">
+                              <option value="living">Living</option>
+                              <option value="deceased">Deceased</option>
+                            </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Update and Save</button>
+                    </form>
+                @endisset
+
+                @empty($animal_to_update)
+                    <form action="{{ url('/animals') }}" method="POST">
+                        {{ csrf_field() }}
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Type</label>
+                        <input type="text" class="form-control" id="type" name="type" placeholder="Enter Type">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Description</label>
+                        <textarea type="text" class="form-control" id="description" name="description">Enter Description</textarea> 
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter Date of Birth">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Date of Inscription</label>
+                        <input type="date" class="form-control" id="date_inscription" name="date_inscription" placeholder="Enter Date of inscription">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Animal State</label>
+                        <select class="form-control" name="animal_state">
+                              <option value="living">Living</option>
+                              <option value="deceased">Deceased</option>
+                            </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                @endempty
+                
             </div>
         </div>
     </body>
