@@ -12,6 +12,13 @@ class OwnerController extends Controller
     	return view('owners', ['owners' => Owner::all()]);
     }
 
+    public function single(Request $request, $id)
+    {
+
+        $owner = Owner::where('id', $id)->first();
+        return view('owner', ['owner' => $owner]);
+    }
+
     public function store(Request $request)
     {
         $owner = new Owner;

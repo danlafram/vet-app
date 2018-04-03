@@ -6,8 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Vet App</title>
-        <!-- FontAwesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -80,48 +78,19 @@
         <div class="container-fluid">
             <table style="width:100%">
               <tr>
-                <th>Animal Id</th>
-                <th>Animal Name</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Date of Birth</th>
-                <th>Inscription Date</th>
-                <th>Sate</th>
                 <th>Owner Id</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Telephone</th>
               </tr>
-              @foreach($animals as $animal)
                 <tr>
-                    <td>{{ $animal->id }}</td>
-                    <td>{{ $animal->name }}</td>
-                    <td>{{ $animal->type }}</td>
-                    <td>{{ $animal->description }}</td>
-                    <td>{{ $animal->dob }}</td>
-                    <td>{{ $animal->dateInscription }}</td>
-                    <td>{{ $animal->animal_state }}</td>
-                    <td> <a href= {{ url('/owner/' . $animal->ownerId) }}> {{ $animal->ownerId }} </a></td>
-                    <td>
-                        <form method="POST" action={{ url('/update-animal') }}>
-                            {!! csrf_field() !!}
-                            <input type="hidden" name="animalId" value="{{ $animal->id }}">
-                            <button type="submit">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </form>
-                        
-                    </td>
-                    <td>
-                        <form method="post" action={{ url('/delete-animal') }}>
-                            {!! csrf_field() !!}
-                            <input type="hidden" name="animalId" value="{{ $animal->id }}">
-                            <button type="submit">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </form>
-                    </td>
+                    <td>{{ $owner->id }}</td>
+                    <td>{{ $owner->fname }}</td>
+                    <td>{{ $owner->lname }}</td>
+                    <td>{{ $owner->address }}</td>
+                    <td>{{ $owner->telephone }}</td>
                 </tr>
-              @endforeach
             </table>
         </div>
     </body>
