@@ -8,5 +8,5 @@ class Result extends Model
 {
     protected $table = 'results';
 
-    protected $fillable = ['treatment_quanitity', 'start_date', 'end_date', 'examNo', 'animalNo', 'treatmentNo'];
+    protected $fillable = ['treatment_quanitity', 'start_date', 'end_date', 'examId', 'animalId', 'treatmentId'];
 }
