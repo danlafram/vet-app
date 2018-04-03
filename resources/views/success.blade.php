@@ -77,27 +77,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <form action="{{ url('/owners') }}" method="POST">
-                    {{ csrf_field() }}
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">First Name</label>
-                    <input type="text" class="form-control" id="first_name" name="fname" placeholder="Enter First Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Last Name</label>
-                    <input type="text" class="form-control" id="last_name" name="lname" placeholder="Enter Last Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Telephone</label>
-                    <input type="number" class="form-control" id="address" name="telephone" placeholder="Enter Telephone">
-                  </div>
-                  <input type="submit" class="btn btn-primary" name="finish" value="Register and Finish" />
-                  <input type="submit" class="btn btn-primary" name="animal" value="Register and Continue to Animal"/>
-                </form>
+                This is the success page. Return Message here with options.
             </div>
         </div>
     </body>

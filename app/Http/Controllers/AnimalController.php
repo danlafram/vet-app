@@ -9,12 +9,16 @@ class AnimalController extends Controller
 {
     public function index(Request $request)
     {
+        return $request->session()->get('id');
     	return view('animals', ['animals' => Animal::all()]);
     }
 
     public function store(Request $request)
     {
-        $animal = new Animal;
+         $animal = new Animal;
+         if($request->session()->get('id')){
+            $animal->ownerId = $request->session()->get('id');
+        }
         $animal->name = $request->input('name');
         $animal->type = $request->input('type');
         $animal->description = $request->input('description');

@@ -21,7 +21,13 @@ class OwnerController extends Controller
         $owner->address = $request->input('address');
         $owner->telephone = $request->input('telephone');
         $owner->save();
-        return 'Successfully saved';
+        if($request->input('finish')){
+            return $owner->id;
+        }
+        else{
+            $request->session()->put('id', $owner->id);
+            return view('register-animal');
+        }
     }
 
     public function update(Request $request)

@@ -44,9 +44,7 @@ Route::get('/request13', 'OwnerController@request13');
 
 // Animals controller
 Route::get('/animals', 'AnimalController@index');
-Route::get('/register-animal', function(){
-	return view('register-animal');
-});
+Route::get('/register-animal', 'AnimalController@store');
 Route::post('/animals', 'AnimalController@store');
 Route::post('/animals{id}', 'AnimalController@update');
 Route::get('/request2', 'AnimalController@request2');
