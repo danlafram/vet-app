@@ -14,8 +14,15 @@ class AnimalController extends Controller
 
     public function store(Request $request)
     {
-    	$name = $request->input('name');
-    	// TBC
+        $animal = new Animal;
+        $animal->name = $request->input('name');
+        $animal->type = $request->input('type');
+        $animal->description = $request->input('description');
+        $animal->dob = $request->input('dob');
+        $animal->dateInscription = $request->input('date_inscription');
+        $animal->animal_state = $request->input('animal_state');
+        $animal->save();
+        return 'Successfully saved';
     }
 
     public function update(Request $request)
