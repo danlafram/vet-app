@@ -32,6 +32,9 @@ Route::get('/request11', 'EmployeeController@request11');
 
 // Owner routes
 Route::get('/owners', 'OwnerController@index');
+Route::get('/register-owner', function(){
+	return view('register-owner');
+});
 Route::post('/owners', 'OwnerController@store');
 Route::post('/owners{id}', 'OwnerController@update');
 Route::get('/request3', 'OwnerController@request3');

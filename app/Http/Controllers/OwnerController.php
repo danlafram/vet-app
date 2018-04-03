@@ -14,8 +14,14 @@ class OwnerController extends Controller
 
     public function store(Request $request)
     {
-    	$name = $request->input('name');
-    	// TBC
+        $owner = new Owner;
+    	$owner->fname = $request->input('fname');
+        $owner->lname = $request->input('lname');
+        $owner->address = $request->input('address');
+        $owner->address = $request->input('address');
+        $owner->telephone = $request->input('telephone');
+        $owner->save();
+        return 'Successfully saved';
     }
 
     public function update(Request $request)
