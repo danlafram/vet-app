@@ -67,6 +67,9 @@ Route::get('/request14', 'ExamController@request14');
 
 // Results controller
 Route::get('/results', 'ResultController@index');
+Route::get('/treatment-recommendation', function(){
+	return view('treatment-recommendation');
+});
 Route::post('/results', 'ResultController@store');
 Route::post('/results{id}', 'ResultController@update');
 

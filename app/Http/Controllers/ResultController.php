@@ -14,8 +14,12 @@ class ResultController extends Controller
 
     public function store(Request $request)
     {
-    	$name = $request->input('name');
-    	// TBC
+        $result = new Result();
+    	$result->treatment_quantity = $request->input('treatment_quantity');
+        $result->start_date = $request->input('start_date');
+        $result->end_date = $request->input('end_date');
+        $result->save();
+        return 'Successfully saved';
     }
 
     public function update(Request $request)
