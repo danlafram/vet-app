@@ -14,8 +14,11 @@ class ExamController extends Controller
 
     public function store(Request $request)
     {
-    	$name = $request->input('name');
-    	// TBC
+    	$exam = new Exam();
+        $exam->exam_date = $request->input('exam_date');
+        $exam->description = $request->input('description');
+        $exam->save();
+        return 'Successfully saved';
     }
 
     public function update(Request $request)
