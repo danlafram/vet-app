@@ -9,7 +9,6 @@ class AnimalController extends Controller
 {
     public function index(Request $request)
     {
-        return $request->session()->get('id');
     	return view('animals', ['animals' => Animal::all()]);
     }
 
@@ -32,7 +31,14 @@ class AnimalController extends Controller
     public function update(Request $request)
     {
 		$name = $request->input('name');
-    	// TBC
+    }
+
+    public function delete(Request $request)
+    {
+        $id = $request->input('animalId');
+        $animal = Animal::where('id', $id)->first();
+        $animal->delete();
+        return 'Successfully Deleted';
     }
 
     public function request2(Request $request)

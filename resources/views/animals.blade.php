@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Vet App</title>
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -86,6 +88,8 @@
                 <th>Inscription Date</th>
                 <th>Sate</th>
                 <th>Owner Id</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
               @foreach($animals as $animal)
                 <tr>
@@ -94,9 +98,27 @@
                     <td>{{ $animal->type }}</td>
                     <td>{{ $animal->description }}</td>
                     <td>{{ $animal->dob }}</td>
-                    <td>{{ $animal->inscription_date }}</td>
-                    <td>{{ $animal->state }}</td>
-                    <td>{{ $animal->owner_id }}</td>
+                    <td>{{ $animal->dateInscription }}</td>
+                    <td>{{ $animal->animal_state }}</td>
+                    <td> <a href="#"> {{ $animal->ownerId }} </a></td>
+                    <td>
+                        <form method="PUT" action={{ url('/animals') }}>
+                            {!! csrf_field() !!}
+                            <button type="submit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </form>
+                        
+                    </td>
+                    <td>
+                        <form method="post" action={{ url('/delete-animal') }}>
+                            {!! csrf_field() !!}
+                            <input type="hidden" name="animalId" value="{{ $animal->id }}">
+                            <button type="submit">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
               @endforeach
             </table>
