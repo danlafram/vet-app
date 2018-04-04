@@ -141,8 +141,8 @@
                 </div>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
-                    <h5 class="card-title">Implemented Requests</h5>
-                    <a href="{{ url('/clinics') }}" class="btn btn-primary">View Requests</a>
+                    <h5 class="card-title">Clinics</h5>
+                    <a href="{{ url('/clinics') }}" class="btn btn-primary">View Clinics</a>
                   </div>
                 </div>
             </div>
