@@ -85,21 +85,18 @@
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Employees Index</h5>
-                    <p class="card-text">Something quick about the employees</p>
                     <a href="{{ url('/employees') }}" class="btn btn-primary">View Employees</a>
                   </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Animals Index</h5>
-                    <p class="card-text">Something quick about the animals</p>
                     <a href="#" class="btn btn-primary">View Animals</a>
                   </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Owners Index</h5>
-                    <p class="card-text">Something quick about the owners</p>
                     <a href="{{ url('/owners') }}" class="btn btn-primary">View Owners</a>
                   </div>
                 </div>
@@ -109,21 +106,18 @@
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Treatments</h5>
-                    <p class="card-text">Something quick about the possible treatments</p>
                     <a href="{{ url('/treatments') }}" class="btn btn-primary">View Treatments</a>
                   </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Examns</h5>
-                    <p class="card-text">Something quick about the possible exams</p>
                     <a href="{{ url('/exams') }}" class="btn btn-primary">View Exams</a>
                   </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Implemented Requests</h5>
-                    <p class="card-text">Something quick about the possible other thing</p>
                     <a href="{{ url('/clinics') }}" class="btn btn-primary">View Requests</a>
                   </div>
                 </div>

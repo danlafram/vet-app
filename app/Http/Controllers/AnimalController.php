@@ -12,6 +12,12 @@ class AnimalController extends Controller
     	return view('animals', ['animals' => Animal::all()]);
     }
 
+    public function view(Request $request, $id)
+    {
+        $animal = Animal::where('id', $id)->first();
+        return view('animal')->with('animal', $animal);
+    }
+
     public function store(Request $request)
     {
         if($request->input('animalId') != null)

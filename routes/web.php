@@ -37,6 +37,7 @@ Route::post('/owners{id}', 'OwnerController@update');
 // Animals controller
 Route::get('/animals', 'AnimalController@index');
 Route::get('/register-animal', 'AnimalController@store');
+Route::get('/animal/{id}', 'AnimalController@view');
 Route::post('/animals', 'AnimalController@store');
 Route::delete('/animals', 'AnimalController@delete');
 Route::post('/delete-animal', 'AnimalController@delete');

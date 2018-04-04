@@ -78,21 +78,26 @@
         <div class="container-fluid">
             <table style="width:100%">
               <tr>
+                <th>Animal Id</th>
+                <th>Animal Name</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Date of Birth</th>
+                <th>Inscription Date</th>
+                <th>Sate</th>
                 <th>Owner Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Address</th>
-                <th>Telephone</th>
               </tr>
-              @foreach($owners as $owner)
                 <tr>
-                    <td>{{ $owner->id }}</td>
-                    <td>{{ $owner->fname }}</td>
-                    <td>{{ $owner->lname }}</td>
-                    <td>{{ $owner->address }}</td>
-                    <td>{{ $owner->telephone }}</td>
+                    <td>{{ $animal->id }}</td>
+                    <td>{{ $animal->name }}</td>
+                    <td>{{ $animal->type }}</td>
+                    <td>{{ $animal->description }}</td>
+                    <td>{{ $animal->dob }}</td>
+                    <td>{{ $animal->dateInscription }}</td>
+                    <td>{{ $animal->animal_state }}</td>
+                    <td> <a href= {{ url('/owner/' . $animal->ownerId) }}> {{ $animal->ownerId }} </a></td>rm>
+                    </td>
                 </tr>
-              @endforeach
             </table>
         </div>
     </body>
