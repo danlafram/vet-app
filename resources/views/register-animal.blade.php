@@ -72,9 +72,35 @@
             .card {
                 display: flex;
             }
+            form {
+                margin: 0 auto;
+            }
+            .nav-link {
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url('/') }}">CSI2532</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">Home</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/register-owner') }}">Register Owner<span class="sr-only">Register Owner</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
         <div class="container-fluid">
             <div class="row">
                 @isset($animal_to_update)
@@ -113,7 +139,7 @@
                 @endisset
 
                 @empty($animal_to_update)
-                    <form action="{{ url('/animals') }}" method="POST">
+                    <form class="col-sm-4 align-self-center" action="{{ url('/animals') }}" method="POST">
                         {{ csrf_field() }}
                       <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>

@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/boot', function() {
+	return view('boot');
+});
+
 Route::get('/', function () {
     return view('home');
 });

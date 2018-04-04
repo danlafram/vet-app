@@ -72,11 +72,35 @@
             .card {
                 display: flex;
             }
+
+            .nav-link {
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{{ url('/') }}">CSI2532</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">Home</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/register-owner') }}">Register Owner<span class="sr-only">Register Owner</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <div class="container-fluid">
-            <table style="width:100%">
+            <table class="table table-striped table-bordered table-hover" style="width:100%">
               <tr>
                 <th>Owner Id</th>
                 <th>First Name</th>
