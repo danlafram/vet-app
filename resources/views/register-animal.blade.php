@@ -140,6 +140,14 @@
                         <select class="form-control" name="animal_state">
                               <option value="living">Living</option>
                               <option value="deceased">Deceased</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Examiner</label>
+                        <select class="form-control" name="animal">
+                                @foreach($owners as $owner)
+                                    <option value=" {{ $owner->id }} "> {{$owner->fname}} {{ $owner->lname }}</option>
+                                @endforeach
                             </select>
                       </div>
                       <button type="submit" class="btn btn-primary">Submit</button>

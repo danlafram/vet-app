@@ -79,6 +79,14 @@
             <div class="row">
                 <form action="{{ url('/results') }}" method="POST">
                     {{ csrf_field() }}
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Treatment</label>
+                      <select class="form-control" name="animal">
+                              @foreach($treatments as $treatment)
+                                  <option value=" {{ $treatment->id }} "> {{$treatment->name}}</option>
+                              @endforeach
+                          </select>
+                    </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Treatment Quantity</label>
                     <input type="number" class="form-control" id="name" name="treatment_quantity">
@@ -91,7 +99,9 @@
                     <label for="exampleInputEmail1">End date</label>
                     <input type="date" class="form-control" name="end_date">
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <input type='hidden' name='animalId' value= {{ $exam->animalId }} >
+                  <input type='hidden' name='examId' value= {{ $exam->id }} >
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>

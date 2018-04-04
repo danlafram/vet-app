@@ -40,7 +40,8 @@ class AnimalController extends Controller
         }
         else
         {
-            return view('register-animal');
+            $owners = \App\Owner::all();
+            return view('register-animal')->with(compact('owners'));
         }
     }
 

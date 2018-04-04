@@ -57,9 +57,7 @@ Route::get('/request15', 'AnimalController@request15');
 
 // Exam controller
 Route::get('/exams', 'ExamController@index');
-Route::get('/conduct-exam', function(){
-	return view('conduct-exam');
-});
+Route::get('/conduct-exam', 'ExamController@view');
 Route::post('/exams', 'ExamController@store');
 Route::post('/exams{id}', 'ExamController@update');
 Route::get('/request5', 'ExamController@request5');

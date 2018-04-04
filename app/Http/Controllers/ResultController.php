@@ -18,6 +18,9 @@ class ResultController extends Controller
     	$result->treatment_quantity = $request->input('treatment_quantity');
         $result->start_date = $request->input('start_date');
         $result->end_date = $request->input('end_date');
+        $result->examId = $request->input('examId');
+        $result->animalId = $request->input('animalId');
+        $result->treatmentId = $request->input('treatmentId');
         $result->save();
         return 'Successfully saved';
     }

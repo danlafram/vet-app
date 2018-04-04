@@ -12,13 +12,32 @@ class ExamController extends Controller
     	return view('exams', ['exams' => Exam::all()]);
     }
 
+    public function view(Request $request)
+    {
+        $examiners = \App\Employee::all();
+        $animals = \App\Animal::all();
+        return view('conduct-exam')->with(compact('examiners', 'animals'));
+    }
+
     public function store(Request $request)
     {
     	$exam = new Exam();
         $exam->exam_date = $request->input('exam_date');
         $exam->description = $request->input('description');
+        $exam->examiner = $request->input('examinerId');
+        $exam->animalId = $request->input('animalId');
         $exam->save();
-        return 'Successfully saved';
+        if($request->input('save'))
+        {
+            return 'Successfully saved';
+        }
+        else
+        {
+            $treatments = \App\Treatment::all();
+            //$animals = \App\Animals::all();
+            return view('treatment-recommendation')->with(compact('treatments', 'exam'));
+        }
+        
     }
 
     public function update(Request $request)

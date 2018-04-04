@@ -87,7 +87,24 @@
                     <label for="exampleInputEmail1">Description</label>
                     <textarea type="text" class="form-control" id="description" name="description">Enter Description</textarea> 
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Examiner</label>
+                    <select class="form-control" name="examinerId">
+                            @foreach($examiners as $examiner)
+                                <option value=" {{ $examiner->id }} "> {{$examiner->fname}} {{ $examiner->lname }}</option>
+                            @endforeach
+                        </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Animal</label>
+                    <select class="form-control" name="animalId">
+                            @foreach($animals as $animal)
+                                <option value=" {{ $animal->id }} "> {{$animal->name}}</option>
+                            @endforeach
+                        </select>
+                  </div>
+                  <input type="submit" class="btn btn-primary" name="save" value="Save Exam" />
+                  <input type="submit" class="btn btn-primary" name="recommend" value="Save and recommend treatment"/>
                 </form>
             </div>
         </div>
