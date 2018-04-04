@@ -46,6 +46,7 @@ Route::post('/animals', 'AnimalController@store');
 Route::delete('/animals', 'AnimalController@delete');
 Route::post('/delete-animal', 'AnimalController@delete');
 Route::post('/update-animal', 'AnimalController@update');
+Route::get('/update-animal', 'AnimalController@store');
 
 // Exam controller
 Route::get('/exams', 'ExamController@index');

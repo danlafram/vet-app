@@ -105,12 +105,10 @@
         </div>
       </nav>
         <div class="container-fluid">
-            <div class="row">
-                <h1 style="margin: 0 auto; padding: 1em;">Register a new Animal</h2>
-            </div>
+            <div class="row"><h1 style="margin: 0 auto; padding: 0.5em;">Register a new Animal</h1></div>
             <div class="row">
                 @isset($animal_to_update)
-                    <form action="{{ url('/update-animal') }}" method="POST">
+                    <form class="col-sm-4 align-self-center" action="{{ url('/update-animal') }}" method="POST">
                         {{ csrf_field() }}
                         <input type="hidden" name="animalId" value=" {{ $animal_to_update->id }} " required>
                       <div class="form-group">
@@ -174,14 +172,14 @@
                               <option value="deceased">Deceased</option>
                         </select>
                       </div>
-                      {{-- <div class="form-group">
+                      <div class="form-group">
                         <label for="exampleInputEmail1">Owner</label>
                         <select class="form-control" name="animal">
                                 @foreach($owners as $owner)
                                     <option value=" {{ $owner->id }} "> {{$owner->fname}} {{ $owner->lname }}</option>
                                 @endforeach
                             </select>
-                      </div> --}}
+                      </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 @endempty

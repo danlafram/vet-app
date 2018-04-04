@@ -107,18 +107,18 @@
                 <h1 style="margin: 0 auto; padding: 1em;">Recommend a Treatment</h2>
             </div>
             <div class="row">
-                <form action="{{ url('/results') }}" method="POST">
+                <form class="col-sm-4 align-self-center" style="margin: 0 auto;" action="{{ url('/results') }}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                       <label for="exampleInputEmail1">Treatment</label>
-                      <select class="form-control" name="animal">
+                      <select class="form-control" name="treatmentId">
                               @foreach($treatments as $treatment)
                                   <option value=" {{ $treatment->id }} "> {{$treatment->name}}</option>
                               @endforeach
                           </select>
                     </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Treatment Quantity</label>
+                    <label for="exampleInputEmail1">Treatment Quantity (mg)</label>
                     <input type="number" class="form-control" id="name" name="treatment_quantity">
                   </div>
                   <div class="form-group">

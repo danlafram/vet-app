@@ -23,27 +23,27 @@ class ForeignKeys extends Migration
         // });
         Schema::table('employees', function (Blueprint $table) {
             $table->unsignedInteger('clinicId')->nullable();
-            $table->foreign('clinicId')->references('id')->on('clinics');
+            $table->foreign('clinicId')->references('id')->on('clinics')->onDelete('set null');
         });
         Schema::table('exams', function (Blueprint $table) {
             $table->unsignedInteger('examiner')->nullable();
-            $table->foreign('examiner')->references('id')->on('employees');
+            $table->foreign('examiner')->references('id')->on('employees')->onDelete('set null');
         });
         Schema::table('exams', function (Blueprint $table) {
             $table->unsignedInteger('animalId')->nullable();
-            $table->foreign('animalId')->references('id')->on('animals');
+            $table->foreign('animalId')->references('id')->on('animals')->onDelete('set null');
         });
         Schema::table('results', function (Blueprint $table) {
             $table->unsignedInteger('animalId')->nullable();
-            $table->foreign('animalId')->references('id')->on('animals');
+            $table->foreign('animalId')->references('id')->on('animals')->onDelete('set null');
         });
         Schema::table('results', function (Blueprint $table) {
             $table->unsignedInteger('examId')->nullable();
-            $table->foreign('examId')->references('id')->on('exams');
+            $table->foreign('examId')->references('id')->on('exams')->onDelete('set null');
         });
         Schema::table('results', function (Blueprint $table) {
             $table->unsignedInteger('treatmentId')->nullable();
-            $table->foreign('treatmentId')->references('id')->on('treatments');
+            $table->foreign('treatmentId')->references('id')->on('treatments')->onDelete('set null');
         });
     }
 

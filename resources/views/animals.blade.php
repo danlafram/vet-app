@@ -131,7 +131,7 @@
                     <td><a href="{{ url('/results/' . $animal->id) }}">View</a></td>
                     <td> <a href= {{ url('/owner/' . $animal->ownerId) }}> {{ $animal->ownerId }} </a></td>
                     <td>
-                        <form method="POST" action={{ url('/update-animal') }}>
+                        <form method="GET" action={{ url('/update-animal') }}>
                             {!! csrf_field() !!}
                             <input type="hidden" name="animalId" value="{{ $animal->id }}">
                             <button type="submit">

@@ -108,7 +108,7 @@
                 <th>Exam Id</th>
                 <th>Animal Id</th>
                 <th>Treatment Id</th>
-                <th>Treatment Quantity</th>
+                <th>Treatment Quantity (mg)</th>
                 <th>Start Date</th>
                 <th>End date</th>
               </tr>
@@ -117,7 +117,7 @@
                     <td>{{ $result->examId }}</td>
                     <td>{{ $result->animalId }}</td>
                     <td>{{ $result->treatmentId }}</td>
-                    <td>{{ $result->treatment_quantity }}</td>
+                    <td>{{ $result->treatment_quanitity }}</td>
                     <td>{{ $result->start_date }}</td>
                     <td>{{ $result->end_date }}</td>
                 </tr>
