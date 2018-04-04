@@ -22,7 +22,13 @@ class ResultController extends Controller
         $result->animalId = $request->input('animalId');
         $result->treatmentId = $request->input('treatmentId');
         $result->save();
-        return 'Successfully saved';
+        return view('success')->with('message', 'Successfully saved recommended treatment');
+    }
+
+    public function animal(Request $request, $id)
+    {
+        $results = \App\Result::where('animalId', $id)->get();
+        return view('spec-treatment')->with('results', $results);
     }
 
     public function update(Request $request)

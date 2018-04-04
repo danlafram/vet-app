@@ -96,6 +96,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -108,13 +111,13 @@
                 <th>Telephone Number</th>
                 <th>Gestionnaire Number</th>
               </tr>
-              @foreach($clinincs as $clinic)
+              @foreach($clinics as $clinic)
                 <tr>
                     <td>{{ $clinic->id }}</td>
                     <td>{{ $clinic->name }}</td>
                     <td>{{ $clinic->address }}</td>
                     <td>{{ $clinic->telephone }}</td>
-                    <td>{{ $clinic->gestionnaire_id }}</td>
+                    <td>{{ $clinic->gestionnaireId }}</td>
                 </tr>
               @endforeach
             </table>

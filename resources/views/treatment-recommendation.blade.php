@@ -96,10 +96,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
             </ul>
           </div>
         </nav>
         <div class="container-fluid">
+            <div class="row">
+                <h1 style="margin: 0 auto; padding: 1em;">Recommend a Treatment</h2>
+            </div>
             <div class="row">
                 <form action="{{ url('/results') }}" method="POST">
                     {{ csrf_field() }}

@@ -96,6 +96,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -107,7 +110,6 @@
                 <th>Examiner</th>
                 <th>AnimalId</th>
                 <th>Description</th>
-                <th>Proposition</th>
               </tr>
               @foreach($exams as $exam)
                 <tr>
@@ -116,7 +118,6 @@
                     <td><a href="{{ url('/employee/' . $exam->examiner) }}">{{ $exam->examiner }}</td>
                     <td><a href="{{ url('/animal/' . $exam->animalId) }}">{{ $exam->animalId }}</a></td>
                     <td>{{ $exam->description }}</td>
-                    <td>{{ $exam->proposition }}</td>
                 </tr>
               @endforeach
             </table>

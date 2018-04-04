@@ -22,8 +22,6 @@ class AnimalController extends Controller
     {
         if($request->input('animalId') != null)
         {
-            //$animal_to_update = new Animal();
-            //$animal_to_update = $request->input('animal');
             $id = $request->input('animalId');
             $animal_to_update = Animal::where('id', $id)->first();
             return view('register-animal', ['animal_to_update' => $animal_to_update]);
@@ -43,6 +41,7 @@ class AnimalController extends Controller
             $animal->animal_state = $request->input('animal_state');
             $animal->save();
             $request->session()->flush();
+            return view('success')->with('message', 'Successfully registered new animal');
         }
         else
         {
@@ -63,7 +62,7 @@ class AnimalController extends Controller
         $animal->animal_state = $request->input('animal_state');
         $animal->save();
         $request->session()->flush();
-        return 'Successfully updated';
+        return view('success')->with('message', 'Successfully updated animal');
     }
 
     public function delete(Request $request)
@@ -71,26 +70,6 @@ class AnimalController extends Controller
         $id = $request->input('animalId');
         $animal = Animal::where('id', $id)->first();
         $animal->delete();
-        return 'Successfully Deleted';
-    }
-
-    public function request2(Request $request)
-    {
-    	//
-    }
-
-    public function request4(Request $request)
-    {
-    	//
-    }
-
-    public function request7(Request $request)
-    {
-    	//
-    }
-
-    public function request15(Request $request)
-    {
-    	//
+        return view('success')->with('message', 'Successfully deleted animal');;
     }
 }

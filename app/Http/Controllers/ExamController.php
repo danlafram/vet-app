@@ -29,12 +29,11 @@ class ExamController extends Controller
         $exam->save();
         if($request->input('save'))
         {
-            return 'Successfully saved';
+            return view('success')->with('message', 'Successfully conducted exam');
         }
         else
         {
             $treatments = \App\Treatment::all();
-            //$animals = \App\Animals::all();
             return view('treatment-recommendation')->with(compact('treatments', 'exam'));
         }
         
@@ -44,20 +43,5 @@ class ExamController extends Controller
     {
 		$name = $request->input('name');
     	// TBC
-    }
-
-    public function request5(Request $request)
-    {
-    	//
-    }
-
-    public function request8(Request $request)
-    {
-    	//
-    }
-
-    public function request14(Request $request)
-    {
-    	//
     }
 }

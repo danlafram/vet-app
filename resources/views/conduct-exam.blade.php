@@ -100,20 +100,26 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
             </ul>
           </div>
         </nav>
         <div class="container-fluid">
             <div class="row">
+                <h1 style="margin: 0 auto; padding: 1em;">Conduct an Exam</h2>
+            </div>
+            <div class="row">
                 <form action="{{ url('/exams') }}" method="POST">
                     {{ csrf_field() }}
                   <div class="form-group">
                     <label for="exampleInputEmail1">Exam Date</label>
-                    <input type="date" class="form-control" id="name" name="exam_date" placeholder="Enter Name">
+                    <input type="date" class="form-control" id="name" name="exam_date" placeholder="Enter Name" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
-                    <textarea type="text" class="form-control" id="description" name="description">Enter Description</textarea> 
+                    <textarea type="text" class="form-control" id="description" name="description"></textarea> 
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Examiner</label>

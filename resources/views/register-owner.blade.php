@@ -101,28 +101,34 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
             </ul>
           </div>
         </nav>
         <div class="container-fluid">
             <div class="row">
+                <h1 style="margin: 0 auto; padding: 1em;">Register a new Owner</h2>
+            </div>
+            <div class="row">
                 <form class="border" action="{{ url('/owners') }}" method="POST">
                     {{ csrf_field() }}
                   <div class="form-group">
                     <label for="exampleInputEmail1">First Name</label>
-                    <input type="text" class="form-control" id="first_name" name="fname" placeholder="Enter First Name">
+                    <input type="text" class="form-control" id="first_name" name="fname" placeholder="Enter First Name" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Last Name</label>
-                    <input type="text" class="form-control" id="last_name" name="lname" placeholder="Enter Last Name">
+                    <input type="text" class="form-control" id="last_name" name="lname" placeholder="Enter Last Name" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Telephone</label>
-                    <input type="number" class="form-control" id="address" name="telephone" placeholder="Enter Telephone">
+                    <input type="number" class="form-control" id="address" name="telephone" placeholder="Enter Telephone" required>
                   </div>
                   <input type="submit" class="btn btn-primary" name="finish" value="Register and Finish" />
                   <input type="submit" class="btn btn-primary" name="animal" value="Register and Continue to Animal"/>

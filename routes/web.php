@@ -55,6 +55,7 @@ Route::post('/exams{id}', 'ExamController@update');
 
 // Results controller
 Route::get('/results', 'ResultController@index');
+Route::get('/results/{id}', 'ResultController@animal');
 Route::get('/treatment-recommendation', function(){
 	return view('treatment-recommendation');
 });

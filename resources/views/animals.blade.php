@@ -98,6 +98,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -111,6 +114,7 @@
                 <th>Date of Birth</th>
                 <th>Inscription Date</th>
                 <th>Sate</th>
+                <th>Treatments</th>
                 <th>Owner Id</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -124,6 +128,7 @@
                     <td>{{ $animal->dob }}</td>
                     <td>{{ $animal->dateInscription }}</td>
                     <td>{{ $animal->animal_state }}</td>
+                    <td><a href="{{ url('/results/' . $animal->id) }}">View</a></td>
                     <td> <a href= {{ url('/owner/' . $animal->ownerId) }}> {{ $animal->ownerId }} </a></td>
                     <td>
                         <form method="POST" action={{ url('/update-animal') }}>

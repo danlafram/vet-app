@@ -96,12 +96,56 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
             </ul>
           </div>
         </nav>
         <div class="container-fluid">
             <div class="row">
-                {{ $message }}
+                <h1 style="margin: 0 auto; padding: 2em;">{{ $message }}</h1>
+            </div>
+            <div class="card-deck">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Employees Index</h5>
+                    <a href="{{ url('/employees') }}" class="btn btn-primary">View Employees</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Animals Index</h5>
+                    <a href="{{ url('/animals') }}" class="btn btn-primary">View Animals</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Owners Index</h5>
+                    <a href="{{ url('/owners') }}" class="btn btn-primary">View Owners</a>
+                  </div>
+                </div>
+            </div>
+            <br>
+            <div class="card-deck">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Treatments</h5>
+                    <a href="{{ url('/treatments') }}" class="btn btn-primary">View Treatments</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Examns</h5>
+                    <a href="{{ url('/exams') }}" class="btn btn-primary">View Exams</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Clinics</h5>
+                    <a href="{{ url('/clinics') }}" class="btn btn-primary">View Clinics</a>
+                  </div>
+                </div>
             </div>
         </div>
     </body>

@@ -29,11 +29,12 @@ class OwnerController extends Controller
         $owner->telephone = $request->input('telephone');
         $owner->save();
         if($request->input('finish')){
-            return $owner->id;
+            return view('success')->with('message', 'You have successfully registered a new owner');
         }
         else{
-            $request->session()->put('id', $owner->id);
-            return view('register-animal');
+            $id = $request->session()->put('id', $owner->id);
+            $owners = \App\Owner::where('id', $id)->get();
+            return view('register-animal')->with('owners', $owners);
         }
     }
 
@@ -41,25 +42,5 @@ class OwnerController extends Controller
     {
 		$name = $request->input('name');
     	// TBC
-    }
-
-    public function request3(Request $request)
-    {
-    	//
-    }
-
-    public function request10(Request $request)
-    {
-    	//
-    }
-
-    public function request12(Request $request)
-    {
-    	//
-    }
-
-    public function request13(Request $request)
-    {
-    	//
     }
 }

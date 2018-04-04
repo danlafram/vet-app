@@ -98,22 +98,28 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/register-animal') }}">Register Animal<span class="sr-only">Register Animal</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/conduct-exam') }}">Conduct Exam<span class="sr-only">Conduct Exam</span></a>
+              </li>
           </ul>
         </div>
       </nav>
         <div class="container-fluid">
             <div class="row">
+                <h1 style="margin: 0 auto; padding: 1em;">Register a new Animal</h2>
+            </div>
+            <div class="row">
                 @isset($animal_to_update)
                     <form action="{{ url('/update-animal') }}" method="POST">
                         {{ csrf_field() }}
-                        <input type="hidden" name="animalId" value=" {{ $animal_to_update->id }} ">
+                        <input type="hidden" name="animalId" value=" {{ $animal_to_update->id }} " required>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
                         <input type="text" class="form-control" id="name" name="name" value=" {{ $animal_to_update->name }} ">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Type</label>
-                        <input type="text" class="form-control" id="type" name="type" value={{ $animal_to_update->type }}>
+                        <input type="text" class="form-control" id="type" name="type" value={{ $animal_to_update->type }} required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Description</label>
@@ -121,18 +127,18 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Date of Birth</label>
-                        <input type="date" class="form-control" id="dob" name="dob" value={{ $animal_to_update->dob }}>
+                        <input type="date" class="form-control" id="dob" name="dob" value={{ $animal_to_update->dob }} required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Date of Inscription</label>
-                        <input type="date" class="form-control" id="date_inscription" name="date_inscription" value={{ $animal_to_update->dateInscription }}>
+                        <input type="date" class="form-control" id="date_inscription" name="date_inscription" value={{ $animal_to_update->dateInscription }} required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Animal State</label>
                         <select class="form-control" name="animal_state">
                               <option value="living">Living</option>
                               <option value="deceased">Deceased</option>
-                            </select>
+                        </select>
                       </div>
                       <button type="submit" class="btn btn-primary">Update and Save</button>
                     </form>
@@ -143,23 +149,23 @@
                         {{ csrf_field() }}
                       <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Type</label>
-                        <input type="text" class="form-control" id="type" name="type" placeholder="Enter Type">
+                        <input type="text" class="form-control" id="type" name="type" placeholder="Enter Type" required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Description</label>
-                        <textarea type="text" class="form-control" id="description" name="description">Enter Description</textarea> 
+                        <textarea type="text" class="form-control" id="description" name="description"></textarea> 
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Date of Birth</label>
-                        <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter Date of Birth">
+                        <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter Date of Birth" required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Date of Inscription</label>
-                        <input type="date" class="form-control" id="date_inscription" name="date_inscription" placeholder="Enter Date of inscription">
+                        <input type="date" class="form-control" id="date_inscription" name="date_inscription" placeholder="Enter Date of inscription" required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Animal State</label>
@@ -168,14 +174,14 @@
                               <option value="deceased">Deceased</option>
                         </select>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Examiner</label>
+                      {{-- <div class="form-group">
+                        <label for="exampleInputEmail1">Owner</label>
                         <select class="form-control" name="animal">
                                 @foreach($owners as $owner)
                                     <option value=" {{ $owner->id }} "> {{$owner->fname}} {{ $owner->lname }}</option>
                                 @endforeach
                             </select>
-                      </div>
+                      </div> --}}
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 @endempty
