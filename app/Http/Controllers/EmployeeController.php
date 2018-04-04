@@ -12,6 +12,12 @@ class EmployeeController extends Controller
     	return view('employees', ['employees' => Employee::all()]);
     }
 
+    public function view(Request $request, $id)
+    {
+        $employee = Employee::where('id', $id)->first();
+        return view('employee', ['employee' => $employee]);
+    }
+
     public function store(Request $request)
     {
     	$name = $request->input('name');

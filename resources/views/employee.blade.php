@@ -76,58 +76,34 @@
     </head>
     <body>
         <div class="container-fluid">
-            <div class="row">
-                <div class="title m-b-md">
-                    CSI2532 - Base de Donnees
-                </div>
-            </div>
-            <div class="card-deck">
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Employees Index</h5>
-                    <p class="card-text">Something quick about the employees</p>
-                    <a href="{{ url('/employees') }}" class="btn btn-primary">View Employees</a>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Animals Index</h5>
-                    <p class="card-text">Something quick about the animals</p>
-                    <a href="#" class="btn btn-primary">View Animals</a>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Owners Index</h5>
-                    <p class="card-text">Something quick about the owners</p>
-                    <a href="{{ url('/owners') }}" class="btn btn-primary">View Owners</a>
-                  </div>
-                </div>
-            </div>
-            <br>
-            <div class="card-deck">
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Treatments</h5>
-                    <p class="card-text">Something quick about the possible treatments</p>
-                    <a href="{{ url('/treatments') }}" class="btn btn-primary">View Treatments</a>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Examns</h5>
-                    <p class="card-text">Something quick about the possible exams</p>
-                    <a href="{{ url('/exams') }}" class="btn btn-primary">View Exams</a>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Implemented Requests</h5>
-                    <p class="card-text">Something quick about the possible other thing</p>
-                    <a href="{{ url('/clinics') }}" class="btn btn-primary">View Requests</a>
-                  </div>
-                </div>
-            </div>
+            <table style="width:100%">
+              <tr>
+                <th>Employee Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>DoB</th>
+                <th>Sexe</th>
+                <th>NAS</th>
+                <th>Fonction</th>
+                <th>Salary</th>
+                <th>Clinic Id</th>
+              </tr>
+                <tr>
+                    <td>{{ $employee->id }}</td>
+                    <td>{{ $employee->fname }}</td>
+                    <td>{{ $employee->lname }}</td>
+                    <td>{{ $employee->address }}</td>
+                    <td>{{ $employee->telephone }}</td>
+                    <td>{{ $employee->dob }}</td>
+                    <td>{{ $employee->sexe }}</td>
+                    <td>{{ $employee->nas }}</td>
+                    <td>{{ $employee->fonction }}</td>
+                    <td>{{ $employee->salary }}</td>
+                    <td><a href="{{ url('/clinic/' . $employee->clinicId) }}"> {{ $employee->clinicId }}</a></td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>

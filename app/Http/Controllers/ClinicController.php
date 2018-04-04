@@ -12,6 +12,12 @@ class ClinicController extends Controller
     	return view('clinics', ['clinics' => Clinic::all()]);
     }
 
+    public function view(Request $request, $id)
+    {
+        $clinic = Clinic::where('id', $id)->first();
+        return view('clinic', ['clinic' => $clinic]);
+    }
+
     public function store(Request $request)
     {
     	$name = $request->input('name');

@@ -93,16 +93,16 @@
               @foreach($employees as $employee)
                 <tr>
                     <td>{{ $employee->id }}</td>
-                    <td>{{ $employee->fName }}</td>
-                    <td>{{ $employee->lName }}</td>
+                    <td>{{ $employee->fname }}</td>
+                    <td>{{ $employee->lname }}</td>
                     <td>{{ $employee->address }}</td>
                     <td>{{ $employee->telephone }}</td>
                     <td>{{ $employee->dob }}</td>
                     <td>{{ $employee->sexe }}</td>
                     <td>{{ $employee->nas }}</td>
                     <td>{{ $employee->fonction }}</td>
-                    <td>{{ $employee->salaire }}</td>
-                    <td>{{ $employee->clinic_id }}</td>
+                    <td>{{ $employee->salary }}</td>
+                    <td><a href='{{ url('/clinic/' . $employee->clinicId) }}'>{{ $employee->clinicId }}</a></td>
                 </tr>
               @endforeach
             </table>
